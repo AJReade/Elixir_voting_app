@@ -13,17 +13,17 @@ defmodule ElectionTest do
   end
 
   test "adding a new candidate from a command", ctx do
-    command = "add Toyosi Draycott"
+    command = "add Bosi D"
     election = Election.update(ctx.election, command)
-    assert election.candidates == [%Candidate{name: "Toyosi Draycott", id: 1}]
+    assert election.candidates == [%Candidate{name: "Bosi D", id: 1}]
   end
 
   test "voting for a candidate from command", ctx do
     command2 = "vote 1"
-    command = "add Toyosi Draycott"
+    command = "add Bosi D"
     election = Election.update(ctx.election, command)
     |> Election.update(command2)
-    assert election.candidates == [%Candidate{id: 1, votes: 1, name: "Toyosi Draycott"}]
+    assert election.candidates == [%Candidate{id: 1, votes: 1, name: "Tosi D"}]
   end
 
   test "quitting the app", ctx do
